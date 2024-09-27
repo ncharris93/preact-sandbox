@@ -35,6 +35,13 @@ export function Home() {
       </button>
       <button
         onClick={() => {
+          route("/store");
+        }}
+      >
+        Store
+      </button>
+      <button
+        onClick={() => {
           route("/mobile");
         }}
       >

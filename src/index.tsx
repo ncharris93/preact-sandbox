@@ -6,6 +6,7 @@ import { Home } from "./pages/Home/index.jsx";
 import { GeolocationPage } from "./pages/Capacitor";
 import { NotFound } from "./pages/_404.jsx";
 import "./style.css";
+import { StoredData } from "./pages/StoredData";
 
 export function App() {
   return (
@@ -16,6 +17,7 @@ export function App() {
           <Route path="/" component={Home} />
           <Route default component={NotFound} />
           <Route path="/mobile" component={GeolocationPage} />
+          <Route path="/store" component={StoredData} />
         </Router>
       </main>
     </LocationProvider>
