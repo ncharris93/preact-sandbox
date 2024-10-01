@@ -7,20 +7,27 @@ import { GeolocationPage } from "./pages/Capacitor";
 import { NotFound } from "./pages/_404.jsx";
 import "./style.css";
 import { StoredData } from "./pages/StoredData";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { Pokemon } from "./pages/Pokemon";
+
+const client = new QueryClient();
 
 export function App() {
   return (
-    <LocationProvider>
-      <Header />
-      <main>
-        <Router>
-          <Route path="/" component={Home} />
-          <Route default component={NotFound} />
-          <Route path="/mobile" component={GeolocationPage} />
-          <Route path="/store" component={StoredData} />
-        </Router>
-      </main>
-    </LocationProvider>
+    <QueryClientProvider client={client}>
+      <LocationProvider>
+        <Header />
+        <main>
+          <Router>
+            <Route path="/" component={Home} />
+            <Route default component={NotFound} />
+            <Route path="/mobile" component={GeolocationPage} />
+            <Route path="/store" component={StoredData} />
+            <Route path="/pokemon" component={Pokemon} />
+          </Router>
+        </main>
+      </LocationProvider>
+    </QueryClientProvider>
   );
 }
 

@@ -1,7 +1,7 @@
 import { useLocation } from "preact-iso";
 import { useEffect, useState } from "preact/hooks";
 
-import { PersistedStore } from "../services/persisted-storage";
+import { PersistedStore } from "../stores/persisted-storage";
 
 export const StoredData = () => {
   const [data, setData] = useState<string | null>(null);

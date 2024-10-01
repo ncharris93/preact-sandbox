@@ -4,11 +4,13 @@ import "./style.css";
 import { useLocation } from "preact-iso";
 import { useIsMobile } from "../../utils/is-mobile";
 import { AppConstants } from "../../constants";
+import { useBearStore } from "../../stores/counter";
 
 export function Home() {
   const { route } = useLocation();
   const [count, setCount] = useState(0);
   const isMobile = useIsMobile();
+  const { bears, increasePopulation } = useBearStore();
 
   return (
     <div class="home">
@@ -47,6 +49,14 @@ export function Home() {
       >
         Mobile
       </button>
+      <button
+        onClick={() => {
+          route("/pokemon");
+        }}
+      >
+        Pokemon
+      </button>
+      <button onClick={increasePopulation}>Bear Count {bears}</button>
       <section>
         <Resource
           title="Learn Preact"
