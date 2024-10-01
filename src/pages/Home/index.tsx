@@ -2,8 +2,8 @@ import { useState } from "preact/hooks";
 import preactLogo from "../../assets/preact.svg";
 import "./style.css";
 import { useLocation } from "preact-iso";
-import { AppConfig } from "../../config";
 import { useIsMobile } from "../../utils/is-mobile";
+import { AppConstants } from "../../constants";
 
 export function Home() {
   const { route } = useLocation();
@@ -13,7 +13,7 @@ export function Home() {
   return (
     <div class="home">
       <h1>
-        {AppConfig.platform}:: {`${isMobile}`}
+        {AppConstants.platform}:: {`${isMobile}`}
       </h1>
       <a href="https://preactjs.com" target="_blank">
         <img src={preactLogo} alt="Preact logo" height="160" width="160" />
