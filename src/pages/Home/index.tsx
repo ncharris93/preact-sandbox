@@ -6,6 +6,14 @@ import { useIsMobile } from "../../utils/is-mobile";
 import { AppConstants } from "../../constants";
 import { useBearStore } from "../../stores/counter";
 
+const buttonArray = [
+  { route: "/abc123", text: "Test" },
+  { route: "/store", text: "Store" },
+  { route: "/mobile", text: "Mobile" },
+  { route: "/pokemon", text: "Pokemon" },
+  { route: "/camera", text: "Camera" },
+];
+
 export function Home() {
   const { route } = useLocation();
   const [count, setCount] = useState(0);
@@ -21,41 +29,15 @@ export function Home() {
         <img src={preactLogo} alt="Preact logo" height="160" width="160" />
       </a>
       <h1>Get Started building Vite-powered Preact Apps </h1>
-      <button
-        onClick={() => {
-          setCount((c) => c + 1);
-        }}
-      >
-        Click Me! {count}
-      </button>
-      <button
-        onClick={() => {
-          route("/abc123");
-        }}
-      >
-        Test
-      </button>
-      <button
-        onClick={() => {
-          route("/store");
-        }}
-      >
-        Store
-      </button>
-      <button
-        onClick={() => {
-          route("/mobile");
-        }}
-      >
-        Mobile
-      </button>
-      <button
-        onClick={() => {
-          route("/pokemon");
-        }}
-      >
-        Pokemon
-      </button>
+      {buttonArray.map((button) => (
+        <button
+          onClick={() => {
+            route(button.route);
+          }}
+        >
+          {button.text}
+        </button>
+      ))}
       <button onClick={increasePopulation}>Bear Count {bears}</button>
       <section>
         <Resource

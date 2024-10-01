@@ -9,6 +9,7 @@ import "./style.css";
 import { StoredData } from "./pages/StoredData";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { Pokemon } from "./pages/Pokemon";
+import { CameraScreen } from "./pages/Camera";
 
 const client = new QueryClient();
 
@@ -24,6 +25,7 @@ export function App() {
             <Route path="/mobile" component={GeolocationPage} />
             <Route path="/store" component={StoredData} />
             <Route path="/pokemon" component={Pokemon} />
+            <Route path="/camera" component={CameraScreen} />
           </Router>
         </main>
       </LocationProvider>
