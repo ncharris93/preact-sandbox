@@ -1,12 +1,12 @@
 import { useEffect, useState } from "preact/hooks";
-import { AppConfig } from "../config";
+import { AppConstants } from "../constants";
 
 export const useIsMobile = () => {
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
     const checkMobile = () => {
-      setIsMobile(window.innerWidth <= AppConfig.mobileMaxWidth);
+      setIsMobile(window.innerWidth <= AppConstants.mobileMaxWidth);
       console.log(window.innerWidth);
     };
     checkMobile();

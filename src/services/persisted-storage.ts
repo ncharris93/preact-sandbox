@@ -1,5 +1,3 @@
-import { AppConfig } from "../config";
-
 interface StorageService {
   length: number;
   clear: () => void;
@@ -28,8 +26,5 @@ class AppStorage {
     this.service.removeItem(key);
   }
 }
-
-// const Store =
-//   AppConfig.platform === "web" ? window.localStorage : window.sessionStorage;
 
 export const PersistedStore = new AppStorage(window.localStorage);

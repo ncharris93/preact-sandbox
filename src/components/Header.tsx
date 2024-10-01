@@ -1,9 +1,9 @@
 import { useLocation } from "preact-iso";
-import { AppConfig } from "../config";
+import { AppConstants } from "../constants";
 
 export function Header() {
   const { url } = useLocation();
-  const { isNativeMobile } = AppConfig;
+  const { isNativeMobile } = AppConstants;
 
   return (
     <header style={isNativeMobile && { paddingTop: 40 }}>
