@@ -8,19 +8,27 @@
 
 ## Getting Started
 
-- `npm run dev` - Starts a dev server at http://localhost:5173/
+### Docker
 
-- `npm run build` - Builds for production, emitting to `dist/`
+- `npm run dev` - serves a docker container with the development server on
+  running on localhost:5173
+- `npm run build:web` - builds a docker container with production code.
+  - outputs to `./build` (can be modified in `./scripts/build.sh`)
 
-- `npm run preview` - Starts a server at http://localhost:4173/ to test
-  production build locally
-
-- `npm run docker` - builds and serves a docker container with the development
-  server. Note, you'll need to run `npm run docker --build` if the app
-  dependencies change
+### Native ( Be sure to serve the app first )
 
 - `npm run ios` - runs an iOS simulator pointing to a running server instance
-  (run after serving app)
-
 - `npm run android` - runs an Android simulator pointing to a running server
-  instance (run after serving app)
+  instance
+
+## Original Vite Commands
+
+- `npm run OG:dev` - Starts a dev server at http://localhost:5173/
+- `npm run OG:preview` - Starts a server at http://localhost:4173/ to test
+  production build locally
+
+## Other
+
+- `npm run build` - Builds for production, emitting to `dist/`
+  - utilized in `Dockerfile` for building the app
+- `npm run sync` - syncs files to native apps

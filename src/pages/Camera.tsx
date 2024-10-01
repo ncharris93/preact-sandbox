@@ -8,15 +8,15 @@ export const CameraScreen = () => {
   const { route } = useLocation();
   const [image, setImage] = useState<string>();
 
-  if (!isNativeMobile) {
-    return <div>Camera is not supported on this platform</div>;
-  }
-
   const onTakePhoto = async () => {
     CameraModule.takePicture().then((photo) => {
       setImage(photo.webPath);
     });
   };
+
+  if (!isNativeMobile) {
+    return <div>Camera is not supported on this platform</div>;
+  }
 
   return (
     <div>
@@ -28,7 +28,7 @@ export const CameraScreen = () => {
         Home
       </button>
       <button onClick={onTakePhoto}>Take Picture</button>
-      <img src={image} height="300" width="300" />
+      {image && <img src={image} height="300" width="300" />}
     </div>
   );
 };

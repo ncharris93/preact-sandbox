@@ -2,16 +2,14 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "vite --host",
-    "docker": "npm run docker:web:run",
-    "docker:rebuild": "docker compose up web build --no-cache",
+    "dev": "docker compose up web",
     "build": "vite build",
+    "build:web": "./scripts/build.sh",
     "sync": "npm run build && npx cap sync",
     "ios": "npx cap run ios",
     "android": "npx cap run android",
-    "preview": "vite preview",
-    "docker:web:build": "./scripts/build.sh",
-    "docker:web:run": "docker compose up web"
+    "OG:dev": "vite --host",
+    "OG:preview": "vite preview"
   },
   "dependencies": {
     "@capacitor/android": "^6.1.2",
