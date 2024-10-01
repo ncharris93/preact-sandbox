@@ -18,7 +18,9 @@
     "@capacitor/geolocation": "^6.0.1",
     "@capacitor/ios": "^6.1.2",
     "preact": "^10.22.1",
-    "preact-iso": "^2.6.3"
+    "preact-iso": "^2.6.3",
+    "react": "npm:@preact/compat",
+    "react-dom": "npm:@preact/compat"
   },
   "devDependencies": {
     "@preact/preset-vite": "^2.9.0",
